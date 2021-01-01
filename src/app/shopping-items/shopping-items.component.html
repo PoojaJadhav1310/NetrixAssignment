@@ -1,0 +1,39 @@
+
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  <table class="table">
+    <thead>
+      <tr>
+        <th >Name</th>
+        <!-- <th style="text-align:center !important;padding-left:6%!important ">Patients</th> -->
+        <th >Price</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allItems let i = index">
+        <td>
+          
+            {{ item.name }}
+          
+        </td>
+        <td>
+          <!-- style="width: 110px !important; text-align:center;" -->
+          {{ item.price }}
+        </td>
+         <td>
+          <button (click)="incrementCount(i)">+</button>
+          <input type="text" [(ngModel)]="count[i]" >
+          <button (click)="decrementCount(i)">-</button>
+         </td>
+       
+        
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="checkOut()">CheckOut</button>
+  <p *ngIf="tempFlag">{{alertMessage}}</p>
+</div>
+<div class="col-md-2"></div>
+
